@@ -2,7 +2,11 @@ name: Docker Builds & push
 
 on:
   push:
-    - master
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build:
