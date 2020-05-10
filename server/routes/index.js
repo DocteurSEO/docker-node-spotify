@@ -1,10 +1,11 @@
 const express = require('express');
 
-require('../controllers/redis_sub-controller');
 const artist = require('./artist');
+const auth = require('./auth');
 
 const mainRoute = express.Router();
 
-mainRoute.use('/', artist);
+mainRoute.use('/auth', auth);
+mainRoute.use('/artist', artist);
 
 module.exports = mainRoute;

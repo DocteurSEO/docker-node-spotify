@@ -8,11 +8,5 @@ const redisClient = redis.createClient({
   port: REDIS_PORT,
   retry_strategy: () => 1000,
 });
-const redisSubscriber = redisClient.duplicate();
 
-redisSubscriber.on('message', (channel, message) => {
-  redisClient.set(message, 'api response');
-});
-redisSubscriber.subscribe('insert');
-
-module.exports = redisSubscriber;
+module.exports = redisClient;
