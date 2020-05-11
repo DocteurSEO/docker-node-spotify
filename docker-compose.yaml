@@ -2,13 +2,25 @@ version: "3"
 services:
   redis-server:
     image: "redis"
-  node-app:
+  proxy-server:
+    restart: always
     build:
-      context: ./server
       dockerfile: Dockerfile.dev
+      context: ./proxy
+    ports:
+      - "8000:80"
+  api:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./server
     volumes:
       - ./server:/app
-    ports:
-      - "4000:4000"
     depends_on:
       - redis-server
+  client:
+    stdin_open: true
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./client
+    volumes:
+      - ./client:/app
