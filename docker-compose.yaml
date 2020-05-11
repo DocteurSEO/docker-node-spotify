@@ -5,6 +5,9 @@ services:
   node-app:
     build:
       context: ./server
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./server:/app
     ports:
       - "4001:4000"
     depends_on:
