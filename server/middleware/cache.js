@@ -1,9 +1,9 @@
 const client = require('../controllers/redis-controller');
 
 function cache(req, res, next) {
-  const { name } = req.params;
+  const { query } = req.params;
 
-  client.get(name, (err, data) => {
+  client.get(query, (err, data) => {
     if (err) throw err;
 
     if (data !== null) {
