@@ -4,7 +4,7 @@ const logger = require('morgan');
 const cors = require('cors');
 
 const routes = require('./routes');
-const handleErrors = require('./routes/errors/errors-handler');
+const handleErrors = require('./helpers/errors/errors-handler');
 
 const server = express();
 

@@ -1,28 +1,20 @@
 const express = require('express');
-const axios = require('axios');
 
-const asyncHandler = require('./errors/async-handler');
-const redisCache = require('../controllers/redis-controller');
+const asyncHandler = require('../helpers/errors/async-handler');
+const { getArtistWithAlbums } = require('../controllers/artist-controller');
+const cache = require('../middleware/cache');
 
 const artist = express.Router();
 
-const BASE_URL = 'https://api.spotify.com/v1/artists/';
+const token =
+  'BQATuOB_0iY75D99B2IgvDHzMOimuhYlYbkMZmSXDKNcCRT_XwT70LMXWT-_59qjafdWfCeSSPthYMMduQh6f45VlAuYpltJ3yceHFls2zQEM9h3u5GcY8ejYw2tPj_srPWl50pjgphczk_YEUCVM-PZdown1wPNQUc';
 
 artist.get(
-  '/:id',
+  '/:name',
+  cache,
   asyncHandler(async (request, response) => {
-    const singer = await axios.get(BASE_URL + request.params.id, {
-      headers: {
-        Authorization: `Bearer BQCfeyMDl1GDaF_Ij1ZYffNAYhcgcQkuNMtd2j7ug3lEuH2RQ5lFKwVaqglQOSyv_StEeVgPUijuJPpK6orChZDBXGlEJ5bslzuMN1AJMYuXuUJRWWvFAvnMpcNmIXlIFaYGItxFRnkuIzoh30HfuLJobgykP10B2tg`,
-      },
-    });
-
-    const { name, images } = singer.data;
-    const cacheDataArtist = { name, imageURL: images[1].url };
-    const idArtist = request.params.id;
-    redisCache.set(idArtist, JSON.stringify(cacheDataArtist));
-
-    response.status(200).json(cacheDataArtist);
+    const dataArtist = await getArtistWithAlbums(request.params.name, token);
+    response.status(200).json(dataArtist);
   }),
 );
 
