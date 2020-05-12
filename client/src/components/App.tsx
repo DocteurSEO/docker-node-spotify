@@ -7,10 +7,13 @@ interface search {
   token: string;
   query: string;
   loading: boolean;
-  info?: Artist;
 }
-
-function _App(props: any) {
+interface _AppProps {
+  info: Artist;
+  fetchArtist(query: string, token: string): any;
+  location: any;
+}
+function _App(props: _AppProps) {
   const [search, setSearch] = useState<search>({
     token: "",
     query: "",
@@ -22,10 +25,12 @@ function _App(props: any) {
 
     if (token != undefined) {
       setSearch({ ...search, token });
-      props.fetchArtist("jule", token);
+      props.fetchArtist("Sandi Thom", token);
     }
   }, []);
-
+  if (props.info.dataArtist != undefined) {
+    console.log(props.info.dataArtist.name);
+  }
   return (
     <div>
       Accueil

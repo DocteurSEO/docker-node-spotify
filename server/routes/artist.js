@@ -11,7 +11,7 @@ artist.get(
   cache,
   asyncHandler(async (request, response) => {
     const token = request.headers.token;
-    console.log(token);
+
     const dataArtist = await getArtistWithAlbums(request.params.query, token);
     response.status(200).json(dataArtist);
   }),
