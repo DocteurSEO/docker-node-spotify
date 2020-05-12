@@ -43,7 +43,7 @@ auth.get('/callback', function (req, res) {
   request.post(authOptions, function (error, response, body) {
     console.log(response.statusCode);
 
-    let uri = process.env.FRONTEND_URI || 'http://localhost:3000';
+    let uri = process.env.FRONTEND_URI || 'http://localhost:8000';
     res.redirect(uri + '?access_token=' + body.access_token);
   });
 });

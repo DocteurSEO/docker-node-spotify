@@ -7,7 +7,7 @@ const cache = require('../middleware/cache');
 const artist = express.Router();
 
 const token =
-  'BQATuOB_0iY75D99B2IgvDHzMOimuhYlYbkMZmSXDKNcCRT_XwT70LMXWT-_59qjafdWfCeSSPthYMMduQh6f45VlAuYpltJ3yceHFls2zQEM9h3u5GcY8ejYw2tPj_srPWl50pjgphczk_YEUCVM-PZdown1wPNQUc';
+  'BQBYRHM5byu1SI3pnDtugn6LijpAMSU_JyL4395qlQ0UUm5pNvJsVNbCBUHemB8M2g_3Cd1rmnO8q2J1lgeEHgjG69gy22sPLATXp2cGuzgdVMlrI9lMAtOZSJUfD1xFgcgfeBWQ_6AACekp_P-WdF17TDchzmrVXK0';
 
 artist.get(
   '/:query',
