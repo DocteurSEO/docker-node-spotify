@@ -16,7 +16,7 @@ Quelques détails techniques sur le projet :
 **. un conteneur NGNIX qui fait office de proxi**
 
 
-## Commande à exécuter : 
+### Commande à exécuter : 
 `docker-compose up --build`
 
 ### À Noter :
