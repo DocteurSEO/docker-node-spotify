@@ -1,5 +1,6 @@
-import React, { useState, memo } from "react";
+import React, { memo } from "react";
 
+import { fail } from "../helpers/fail";
 function Tracks(props: any) {
   const ms = props.ms;
   const s = Math.floor(ms / 1000) % 60;
@@ -9,7 +10,7 @@ function Tracks(props: any) {
     <div
       className="tracks"
       onClick={(e) => {
-        props.player(props.preview);
+        props.player(props.preview ? props.preview : fail);
       }}
     >
       <div className="track">

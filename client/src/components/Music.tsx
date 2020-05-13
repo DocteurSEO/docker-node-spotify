@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchTracks } from "../actions";
 import { StoreState } from "../reducers";
 
 import Tracks from "./Tracks";
-
+interface trackData {
+  data: { items: [object] };
+}
 interface MusicProps {
   imageAlbum: string;
   release: string;
   title: string;
   id: string;
   token: string;
-  musicInfo: any;
-  change(): any;
-  fetchTracks(query: string, tokenauth: string): any;
+  musicInfo: trackData;
+  change(): void;
+  fetchTracks(query: string, tokenauth: string): void;
 }
 let prevURl = "";
 const audioElement = new Audio();

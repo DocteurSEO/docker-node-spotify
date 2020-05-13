@@ -20,7 +20,7 @@ function _App(props: _AppProps) {
   useEffect((): void => {
     const token: string = props.location.search.split("access_token=")[1];
 
-    if (token != undefined) {
+    if (token !== undefined) {
       setSearch({ ...search, token });
       props.fetchArtist(nameArtist, token);
     }
@@ -51,7 +51,7 @@ function _App(props: _AppProps) {
         {props.info.data && (
           <Info image={props.info.data.imageURL} name={props.info.data.name} />
         )}
-        {props.info.data != undefined && (
+        {props.info.data !== undefined && (
           <Music
             change={handleChangeAlbum}
             imageAlbum={props.info.data.dataAlbums[numAlbum].images[1].url}

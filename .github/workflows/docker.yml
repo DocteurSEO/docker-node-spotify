@@ -25,12 +25,7 @@ jobs:
       - name: docker build proxy
         run: |
           docker build ./proxy -t docteurseo/proxy
-      - name: docker build client
-        run: |
-          docker build ./client -t docteurseo/client
-
       - name: docker push
         run: |
           docker push docteurseo/node_api
           docker push docteurseo/proxy
-          docker push docteurseo/client

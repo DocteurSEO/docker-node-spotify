@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 
-const Header = (props: any) => {
+interface HeaderProps {
+  name?: string;
+  changeName(name: string): void;
+}
+
+const Header = (props: HeaderProps) => {
   const [name, setName] = useState("");
 
   return (
@@ -16,11 +21,6 @@ const Header = (props: any) => {
             type="text"
             placeholder="Search"
           />
-        </div>
-        <div className="user">
-          <div className="user__notifications">
-            <i className="ion-android-notifications"></i>
-          </div>
         </div>
       </div>
     </div>
