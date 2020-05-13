@@ -1,8 +1,12 @@
-name: Docker Builds & push
+name: Docker Builds
 
 on:
   push:
-    - master
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build:
