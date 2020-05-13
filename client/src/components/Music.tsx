@@ -20,7 +20,7 @@ const audioElement = new Audio();
 const _Music = (props: MusicProps) => {
   useEffect((): void => {
     props.fetchTracks(props.id, props.token);
-  });
+  }, [props.title]);
 
   function play(url: string) {
     if (!audioElement.paused && prevURl === url) {

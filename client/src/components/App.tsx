@@ -32,8 +32,6 @@ function _App(props: _AppProps) {
 
   const handleChangeAlbum = (): void => {
     if (props.info.data.dataAlbums.length > numAlbum + 1) {
-      console.log(props.info.data.dataAlbums.length);
-      console.log(" n", numAlbum);
       SetNumAlbum(numAlbum + 1);
     } else {
       SetNumAlbum(0);
