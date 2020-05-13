@@ -37,7 +37,7 @@ artistController = {
       JSON.stringify(dataArtist),
     );
 
-    return { cached: artistDataCache, dataArtist };
+    return { data: dataArtist };
   },
 };
 module.exports = artistController;

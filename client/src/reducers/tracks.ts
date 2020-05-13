@@ -1,10 +1,9 @@
 //import { DispatchArtist } from "../actions";
 import { ActionTypes } from "../actions/types";
-import { Artist } from "../actions";
 
-export const artistReducer = (state: Artist | {} = {}, action: any) => {
+export const tracksReducer = (state = {}, action: any) => {
   switch (action.type) {
-    case ActionTypes.FETCH_ARTIST:
+    case ActionTypes.FETCH_TRACKS:
       return action.payload;
 
     default:
