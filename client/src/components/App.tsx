@@ -53,7 +53,7 @@ function _App(props: _AppProps) {
         {props.info.data && (
           <Info image={props.info.data.imageURL} name={props.info.data.name} />
         )}
-        {props.info.data && (
+        {props.info.data != undefined && (
           <Music
             change={handleChangeAlbum}
             imageAlbum={props.info.data.dataAlbums[numAlbum].images[1].url}

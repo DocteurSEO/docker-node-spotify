@@ -15,11 +15,8 @@ services:
       context: ./server
     volumes:
       - ./server:/app
-<<<<<<< HEAD
     ports:
       - "4001:4000"
-=======
->>>>>>> dev
     depends_on:
       - redis-server
   client:

@@ -44,7 +44,10 @@ const _Music = (props: MusicProps) => {
                 <div className="album">
                   <div className="album__info">
                     <div className="album__info__art">
-                      <img src={props.imageAlbum} alt="refacto later" />
+                      <img
+                        src={props.imageAlbum && props.imageAlbum}
+                        alt="refacto later"
+                      />
                     </div>
                     <div className="album__info__meta">
                       <div className="album__year">{props.release}</div>
