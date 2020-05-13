@@ -15,6 +15,10 @@ Quelques détails techniques sur le projet :
 **. un conteneur Redis pour la mise en place du cash**  
 **. un conteneur NGNIX qui fait office de proxi**
 
+
+## Run Command : 
+`docker-compose up --build`
+
 ### À Noter :
 
 Une présence de fichiers `YAML` pour activer le déploiement continue et l’intégration continue avec GitHub Action.
