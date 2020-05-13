@@ -13,7 +13,7 @@ tracksController = {
     const dataTacks = tracks.data;
 
     const tracksDataCache = redisCache.set(idAlbum, JSON.stringify(dataTacks));
-    return { cached: tracksDataCache, dataTacks };
+    return { data: dataTacks };
   },
 };
 module.exports = tracksController;

@@ -5,7 +5,7 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
 const auth = express.Router();
-const redirect_uri = 'http://localhost:4000/api/auth/callback';
+const redirect_uri = 'http://localhost:8000/api/auth/callback';
 
 auth.get('/', async (req, response) => {
   response.redirect(
@@ -43,7 +43,7 @@ auth.get('/callback', function (req, res) {
   request.post(authOptions, function (error, response, body) {
     console.log(response.statusCode);
 
-    let uri = process.env.FRONTEND_URI || 'http://localhost:3000';
+    let uri = process.env.FRONTEND_URI || 'http://localhost:8000';
     res.redirect(uri + '?access_token=' + body.access_token);
   });
 });

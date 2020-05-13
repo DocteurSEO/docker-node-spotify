@@ -7,7 +7,7 @@ function cache(req, res, next) {
     if (err) throw err;
 
     if (data !== null) {
-      res.send({ dataArtist: JSON.parse(data) });
+      res.send({ data: JSON.parse(data) });
     } else {
       next();
     }
