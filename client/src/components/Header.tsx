@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Header = (props: any) => {
   const [name, setName] = useState("");
-  console.log(name);
+
   return (
     <div>
       <div className="header">

@@ -9,6 +9,8 @@ services:
       context: ./proxy
     ports:
       - "8000:80"
+    depends_on:
+      - client
   api:
     build:
       dockerfile: Dockerfile.dev

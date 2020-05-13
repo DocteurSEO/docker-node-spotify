@@ -39,7 +39,7 @@ function _App(props: _AppProps) {
   };
 
   return (
-    <div>
+    <div className="center">
       <Header changeName={handleChangeNameArtist} />
       <div className="content">
         {props.info.error && (
@@ -64,6 +64,7 @@ function _App(props: _AppProps) {
       </div>
       {search.token === "" && (
         <button
+          style={{ marginTop: "50px" }}
           onClick={() => {
             window.location.href = "api/auth";
           }}

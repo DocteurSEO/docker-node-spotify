@@ -334,7 +334,9 @@ body {
   width: 135px;
   height: 135px;
 }
-
+.center {
+  text-align: center;
+}
 .album__info__meta {
   width: calc(100% - 150px);
   margin-left: 15px;
