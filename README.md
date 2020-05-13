@@ -12,7 +12,7 @@ Quelques détails techniques sur le projet :
 
 **. un conteneur NodeJS Express pour la gestion de l’API**  
 **. un conteneur React-Redux avec TypeScript (côté client)**  
-**. un conteneur Redis pour la mise en place du cash**  
+**. un conteneur Redis pour la mise en place du cache**  
 **. un conteneur NGNIX qui fait office de proxi**
 
 
