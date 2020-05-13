@@ -18,7 +18,7 @@ Quelques détails techniques sur le projet :
 
 ### Commande à exécuter : 
 `docker-compose up --build`       
-site visible sur : `http://localhost:8000/`
+`http://localhost:8000/`
 
 ### À Noter :
 
